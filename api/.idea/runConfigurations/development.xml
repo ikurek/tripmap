@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="development" type="JetRunConfigurationType">
+    <envs>
+      <env name="JWT_AUDIENCE" value="0.0.0.0:8080/admin" />
+      <env name="JWT_REALM" value="Access to admin panel" />
+      <env name="JWT_ISSUER" value="0.0.0.0:8080" />
+      <env name="JWT_SECRET" value="secret" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.tripmap.ApplicationKt" />
+    <module name="com.tripmap.api.main" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

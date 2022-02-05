@@ -1,4 +1,4 @@
-package com.tripmap.dto
+package com.tripmap.dtos
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

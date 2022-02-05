@@ -6,7 +6,7 @@
       <env name="JWT_ISSUER" value="0.0.0.0:8080" />
       <env name="JWT_SECRET" value="secret" />
       <env name="DATABASE_DRIVER" value="org.h2.Driver" />
-      <env name="DATABASE_URL" value="jdbc:h2:mem:test" />
+      <env name="DATABASE_URL" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1" />
       <env name="DATABASE_USERNAME" value="root" />
       <env name="DATABASE_PASSWORD" value="" />
     </envs>

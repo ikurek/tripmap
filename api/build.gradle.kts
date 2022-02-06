@@ -43,6 +43,7 @@ dependencies {
 
     // DATABASES
     implementation("com.h2database:h2:2.1.210")
+    implementation("org.postgresql:postgresql:42.3.1")
 
     // TESTS
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")

@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="development (H2)" type="JetRunConfigurationType">
+    <envs>
+      <env name="JWT_AUDIENCE" value="0.0.0.0:8080/admin" />
+      <env name="JWT_REALM" value="Access to admin panel" />
+      <env name="JWT_ISSUER" value="0.0.0.0:8080" />
+      <env name="JWT_SECRET" value="secret" />
+      <env name="DATABASE_DRIVER" value="org.h2.Driver" />
+      <env name="DATABASE_URL" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1" />
+      <env name="DATABASE_USERNAME" value="root" />
+      <env name="DATABASE_PASSWORD" value="" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.tripmap.ApplicationKt" />
+    <module name="com.tripmap.api.main" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,6 +1,8 @@
 package com.tripmap.plugins.database
 
 import com.tripmap.database.tables.Locations
+import com.tripmap.database.tables.TripLocations
+import com.tripmap.database.tables.Trips
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -16,6 +18,6 @@ fun configureDatabase() {
     )
 
     transaction {
-        SchemaUtils.create(Locations)
+        SchemaUtils.create(Locations, Trips, TripLocations)
     }
 }

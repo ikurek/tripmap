@@ -25,6 +25,12 @@ object LocationRepository {
         LocationMapper.mapFromEntity(entity)
     }
 
+    fun saveLocationAsEntity(location: Location): LocationEntity = transaction {
+        LocationEntity.findById(location.uuid)?.let { existingEntity ->
+            updateLocation(existingEntity, location)
+        } ?: createLocation(location)
+    }
+
     private fun updateLocation(locationEntity: LocationEntity, location: Location): LocationEntity = transaction {
         locationEntity.name = location.name
         locationEntity.latitude = location.latitude

@@ -13,7 +13,10 @@ fun Route.trips() {
     route("/trips") {
         get {
             GetAllTrips.handleRequest(request = null).let { useCaseResponse ->
-                call.respond(useCaseResponse.responseCode, useCaseResponse.content)
+                call.respond(
+                    status = useCaseResponse.responseCode,
+                    message = useCaseResponse.content
+                )
             }
         }
 
@@ -23,7 +26,10 @@ fun Route.trips() {
                     id = UUID.fromString(call.parameters["id"])
                 )
             ).let { useCaseResponse ->
-                call.respond(useCaseResponse.responseCode, useCaseResponse.content)
+                call.respond(
+                    status = useCaseResponse.responseCode,
+                    message = useCaseResponse.content
+                )
             }
         }
     }

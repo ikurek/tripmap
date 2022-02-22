@@ -16,7 +16,6 @@ object LocationRepository {
         LocationEntity.all().map { entity -> LocationMapper.mapFromEntity(entity) }
     }
 
-    // FIXME: Attach this
     fun saveLocation(location: Location): Location = transaction {
         val entity = LocationEntity.findById(location.uuid)?.let { existingEntity ->
             updateLocation(existingEntity, location)

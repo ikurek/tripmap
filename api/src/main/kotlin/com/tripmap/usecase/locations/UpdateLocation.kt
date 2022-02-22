@@ -16,7 +16,7 @@ object UpdateLocation : ApiUseCase<UpdateLocation.Request, LocationResponseDTO> 
     override fun handleRequest(request: Request): ApiUseCaseResponse<LocationResponseDTO> =
         LocationRepository.getLocationByID(request.id)?.let { existingLocation: Location ->
             LocationRepository.saveLocation(
-                existingLocation.copy(
+                Location(
                     uuid = request.id,
                     name = request.name,
                     latitude = request.latitude.toBigDecimal(),

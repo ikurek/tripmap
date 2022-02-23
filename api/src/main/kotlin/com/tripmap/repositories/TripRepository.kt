@@ -17,7 +17,6 @@ object TripRepository {
         TripEntity.all().map { entity -> TripMapper.mapFromEntity(entity) }
     }
 
-    // FIXME: Attach this
     fun saveTrip(trip: Trip): Trip = transaction {
         val entity = TripEntity.findById(trip.uuid)?.let { existingEntity ->
             updateTrip(existingEntity, trip)

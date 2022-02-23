@@ -11,6 +11,7 @@ import io.ktor.server.plugins.NotFoundException
 import io.ktor.server.plugins.StatusPages
 import io.ktor.server.response.respond
 import io.ktor.server.routing.routing
+import kotlinx.serialization.SerializationException
 
 fun Application.configureStatusPages() = routing {
     install(StatusPages) {
@@ -24,6 +25,9 @@ fun Application.configureStatusPages() = routing {
             call.respond(HttpStatusCode.NotFound, ErrorResponseDTO.fromException(cause))
         }
         exception<BadRequestException> { call, cause ->
+            call.respond(HttpStatusCode.BadRequest, ErrorResponseDTO.fromException(cause))
+        }
+        exception<SerializationException> { call, cause ->
             call.respond(HttpStatusCode.BadRequest, ErrorResponseDTO.fromException(cause))
         }
     }

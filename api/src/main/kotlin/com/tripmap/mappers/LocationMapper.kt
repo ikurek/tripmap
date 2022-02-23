@@ -13,6 +13,10 @@ object LocationMapper {
         longitude = locationEntity.longitude
     )
 
+    fun mapToDTO(locations: List<Location>) = locations.map { location ->
+        mapToDTO(location)
+    }
+
     fun mapToDTO(location: Location) = LocationResponseDTO(
         uuid = location.uuid.toString(),
         name = location.name,
